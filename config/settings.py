@@ -78,8 +78,9 @@ WSGI_APPLICATION = 'config.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'net_shop',
         'USER': 'postgres',
-        'PASSWORD': 'Tyjnbr888'
+        'PASSWORD': 'Tyjnbr888',
     }
 }
 
@@ -128,3 +129,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_DIR = (
     BASE_DIR / 'static',
 )
+
+MEDIA_URL = 'media/'
+MEDIA_ROOT = BASE_DIR / 'media/'
