@@ -15,5 +15,8 @@ def contacts(request):
 
 
 def product(request, id):
-    id_dict = {"id": id}
+    id_dict = {
+        "page_id": id,
+        'object_list': Product.objects.all()
+               }
     return render(request, 'catalog/product.html', id_dict)
