@@ -7,7 +7,7 @@
 </div>
 
 <div class="container">
-    <div class="row text-center">
+    <div class="row text-center justify-content-center align-items-center">
         {% for object in object_list %}
             <div class="col-4">
                 <div class="card mb-4 box-shadow">
@@ -16,8 +16,8 @@
                     </div>
                     <div class="card-body">
                         <h1 class="card-title pricing-card-title">{{object.price}} рупий</h1>
-                        <h5 class="fw-normal text-muted mb-3">{{object.description}}</h5>
-                        <a class="p-1 btn btn-success" href="/product/{{object.id}}"><h5>Слышь, купи!</h5></a>
+                        <h5 class="fw-normal text-muted mb-3">{{object.description|truncatewords:2}}</h5>
+                        <a class="p-1 btn btn-info text-white" href="/product/{{object.id}}"><h5>Узнать больше</h5></a>
                     </div>
                 </div>
             </div>
