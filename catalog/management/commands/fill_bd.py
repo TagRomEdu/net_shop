@@ -22,7 +22,9 @@ class Command(BaseCommand):
         Category.objects.bulk_create(cat_to_create)
 
         for i, data in enumerate(data_to_create[5:]):
-            Product.objects.create(pk=i+1, name=data['fields']['name'],
+            Product.objects.create(pk=i+1,
+                                   name=data['fields']['name'],
                                    description=data['fields']['description'],
+                                   photo=data['fields']['photo'],
                                    category=Category.objects.get(pk=data['fields']['category'] % 10),
                                    price=data['fields']['price'])
