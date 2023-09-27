@@ -1,1 +1,94 @@
-[{"model": "catalog.category", "pk": 6, "fields": {"name": "Рассылки", "description": null}}, {"model": "catalog.category", "pk": 7, "fields": {"name": "Телеграм боты", "description": null}}, {"model": "catalog.category", "pk": 8, "fields": {"name": "Полезные утилиты", "description": null}}, {"model": "catalog.category", "pk": 9, "fields": {"name": "Веб-приложения", "description": null}}, {"model": "catalog.category", "pk": 10, "fields": {"name": "Микросервисы", "description": null}}]
+[
+  {
+    "model": "catalog.category",
+    "pk": 1,
+    "fields": {
+      "name": "Рассылки",
+      "description": null
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 2,
+    "fields": {
+      "name": "Телеграм боты",
+      "description": null
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 3,
+    "fields": {
+      "name": "Полезные утилиты",
+      "description": null
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 4,
+    "fields": {
+      "name": "Веб-приложения",
+      "description": null
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 5,
+    "fields": {
+      "name": "Микросервисы",
+      "description": null
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 1,
+    "fields": {
+      "name": "Mood-bot",
+      "description": "Бот настроения. Спрашивает вас о самочувствии и отвечает в тему: картинкой или текстом.",
+      "photo": "",
+      "category": 2,
+      "price": 300,
+      "creating_date": "2023-09-26T05:23:11.369Z",
+      "modified_date": "2023-09-26T05:23:11.369Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 2,
+    "fields": {
+      "name": "Bounty Hunter",
+      "description": "Парсер вакансий. Сервис для сбора интересующих вакансий с hh.ru",
+      "photo": "",
+      "category": 5,
+      "price": 300,
+      "creating_date": "2023-09-26T05:48:48.982Z",
+      "modified_date": "2023-09-26T05:48:48.982Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 3,
+    "fields": {
+      "name": "Fastsender",
+      "description": "Сервис рассылок. Позволяет автоматизировать и создавать рассылки.",
+      "photo": "",
+      "category": 1,
+      "price": 300,
+      "creating_date": "2023-09-26T06:37:51.651Z",
+      "modified_date": "2023-09-26T06:37:51.651Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 4,
+    "fields": {
+      "name": "Simple Site",
+      "description": "Обычный сайт. Хорош тем, что может служить уверенным фундаментом для любого старт-апа.",
+      "photo": "",
+      "category": 4,
+      "price": 300,
+      "creating_date": "2023-09-26T11:04:41.374Z",
+      "modified_date": "2023-09-26T11:04:41.374Z"
+    }
+  }
+]
