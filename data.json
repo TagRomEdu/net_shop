@@ -45,7 +45,7 @@
     "fields": {
       "name": "Mood-bot",
       "description": "Бот настроения. Спрашивает вас о самочувствии и отвечает в тему: картинкой или текстом.",
-      "photo": "",
+      "photo": "2.jpg",
       "category": 12,
       "price": 300,
       "creating_date": "2023-09-26T05:23:11.369Z",
@@ -58,7 +58,7 @@
     "fields": {
       "name": "Bounty Hunter",
       "description": "Парсер вакансий. Сервис для сбора интересующих вакансий с hh.ru",
-      "photo": "1.jpg",
+      "photo": "5.jpg",
       "category": 15,
       "price": 300,
       "creating_date": "2023-09-26T05:48:48.982Z",
@@ -71,7 +71,7 @@
     "fields": {
       "name": "Fastsender",
       "description": "Сервис рассылок. Помогает автоматизировать рассылки и удобно настроить сервис под свои нужды",
-      "photo": "",
+      "photo": "4.jpg",
       "category": 11,
       "price": 300,
       "creating_date": "2023-09-26T06:37:51.651Z",
@@ -84,7 +84,7 @@
     "fields": {
       "name": "Simple Site",
       "description": "Обычный сайт. Хорош тем, что может служить уверенным фундаментом для любого старт-апа.",
-      "photo": "",
+      "photo": "3.jpg",
       "category": 14,
       "price": 300,
       "creating_date": "2023-09-26T11:04:41.374Z",
