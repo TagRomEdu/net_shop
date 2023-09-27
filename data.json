@@ -57,7 +57,7 @@
     "pk": 4,
     "fields": {
       "name": "Bounty Hunter",
-      "description": "Сервис для сбора интересующих вакансий с hh.ru",
+      "description": "Парсер вакансий. Сервис для сбора интересующих вакансий с hh.ru",
       "photo": "",
       "category": 15,
       "price": 300,
@@ -70,7 +70,7 @@
     "pk": 5,
     "fields": {
       "name": "Fastsender",
-      "description": "Сервис рассылок",
+      "description": "Сервис рассылок. Помогает автоматизировать рассылки и удобно настроить сервис под свои нужды",
       "photo": "",
       "category": 11,
       "price": 300,
