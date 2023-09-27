@@ -8,4 +8,4 @@ register = template.Library()
 def mediapath(value):
     if value:
         return f'/media/{value}'
-    return ''
+    return '/media/1.jpg'
