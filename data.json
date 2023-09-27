@@ -58,7 +58,7 @@
     "fields": {
       "name": "Bounty Hunter",
       "description": "Парсер вакансий. Сервис для сбора интересующих вакансий с hh.ru",
-      "photo": "",
+      "photo": "1.jpg",
       "category": 15,
       "price": 300,
       "creating_date": "2023-09-26T05:48:48.982Z",
