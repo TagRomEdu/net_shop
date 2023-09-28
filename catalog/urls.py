@@ -1,6 +1,6 @@
 from django.urls import path
 
-from catalog.models import Product
+
 from catalog.views import home, contacts, product
 
 
