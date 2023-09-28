@@ -6,17 +6,13 @@
       <div class="media">
         <div class="media-body">
           <h3 class="fw-normal text-muted mb-3">
-            {% for object in object_list %}
-              {% if page_id == object.id %}
-                <img class="img-thumbnail" src="{{object.photo|mediapath}}" alt="Generic placeholder image">
-                <ul class="list-group">
-                  <li class="list-group-item font-weight-bolder">{{object.name}}</li>
-                  <li class="list-group-item">Категория: {{object.category}}</li>
-                  <li class="list-group-item">{{object.description}}</li>
-                  <li class="list-group-item">{{object.price}} рупий</li>
-                </ul>
-              {% endif %}
-            {% endfor %}
+            <img class="img-thumbnail" src="{{object.photo|mediapath}}" alt="Generic placeholder image">
+            <ul class="list-group">
+              <li class="list-group-item font-weight-bolder">{{object.name}}</li>
+              <li class="list-group-item">Категория: {{object.category}}</li>
+              <li class="list-group-item">{{object.description}}</li>
+              <li class="list-group-item">{{object.price}} рупий</li>
+            </ul>
           </h3>
         </div>
       </div>
