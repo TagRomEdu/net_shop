@@ -124,7 +124,7 @@ STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / 'static/'
 
 STATICFILES_DIR = (
-    BASE_DIR / 'catalog/static/',
+    BASE_DIR / 'static/',
 )
 
 # Default primary key field type
