@@ -19,12 +19,17 @@ def contacts(request):
 
 class BlogCreateView(CreateView):
     model = Blog
-    fields = ('name', 'preview', 'text')
+    fields = ('name', 'preview', 'text', 'is_published')
     success_url = reverse_lazy('catalog:list')
 
 
 class BlogListView(ListView):
     model = Blog
+
+    def get_queryset(self, *args, **kwargs):
+        queryset = super().get_queryset(*args, **kwargs)
+        queryset = queryset.filter(is_published=True)
+        return queryset
 
 
 class BlogDetailView(DetailView):
