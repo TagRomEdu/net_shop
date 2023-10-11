@@ -27,6 +27,11 @@ class ProductUpdateView(UpdateView):
     success_url = reverse_lazy('catalog:main')
 
 
+class ProductDeleteView(DeleteView):
+    model = Product
+    success_url = reverse_lazy('catalog:main')
+
+
 def contacts(request):
     return render(request, 'catalog/contacts.html')
 
@@ -77,7 +82,6 @@ class BlogUpdateView(UpdateView):
 
     def get_success_url(self):
         return reverse('catalog:detail', args=[self.kwargs.get('slug')])
-
 
 
 class BlogDeleteView(DeleteView):
