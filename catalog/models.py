@@ -40,6 +40,9 @@ class Version(models.Model):
     name_ver = models.CharField(max_length=150, verbose_name='название версии')
     is_version = models.BooleanField(default=False, verbose_name='признак версии')
 
+    def __str__(self):
+        return f'{self.name_ver}'
+
     class Meta:
         verbose_name = 'Версия'
         verbose_name_plural = 'Версии'
