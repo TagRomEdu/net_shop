@@ -4,6 +4,7 @@
     <h1 class="display-4">Skystore</h1>
     <p class="lead">Skystore - это отличный магазин хранения плагинов и примеров кода, который вам бы хотели
         продать</p>
+    <a href="{% url 'catalog:prod_create' %}" class="btn btn-primary my-2">Добавить продукт</a>
 </div>
 
 <div class="container">
@@ -18,6 +19,14 @@
                         <h1 class="card-title pricing-card-title">{{object.price}} рупий</h1>
                         <h5 class="fw-normal text-muted mb-3">{{object.description|truncatewords:2}}</h5>
                         <a class="p-1 btn btn-info text-white" href="/product/{{object.id}}"><h5>Узнать больше</h5></a>
+                        <a class="p-1 btn btn-danger text-white" href="{% url 'catalog:prod_delete' object.pk %}"><h5>Удалить</h5></a>
+                    </div>
+                    <div class="card-footer">
+                        {% for version in object.version_set.all %}
+                            {% if version.is_version %}
+                                <p>Актуальная версия: {{ version.num_ver }}<p>
+                            {% endif %}
+                        {% endfor %}
                     </div>
                 </div>
             </div>
