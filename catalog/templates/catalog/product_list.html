@@ -21,6 +21,13 @@
                         <a class="p-1 btn btn-info text-white" href="/product/{{object.id}}"><h5>Узнать больше</h5></a>
                         <a class="p-1 btn btn-danger text-white" href="{% url 'catalog:prod_delete' object.pk %}"><h5>Удалить</h5></a>
                     </div>
+                    <div class="card-footer">
+                        {% for version in object.version_set.all %}
+                            {% if version.is_version %}
+                                <p>Актуальная версия: {{ version.num_ver }}<p>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
                 </div>
             </div>
         {% endfor %}
