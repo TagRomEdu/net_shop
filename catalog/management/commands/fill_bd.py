@@ -9,7 +9,7 @@ class Command(BaseCommand):
     def handle(self, *args, **kwargs):
 
         Category.objects.all().delete()
-        Category.objects.all().delete()
+        Product.objects.all().delete()
 
         with open('data.json') as file:
             data_to_create = json.load(file)
