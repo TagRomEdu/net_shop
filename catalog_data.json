@@ -1,0 +1,140 @@
+[
+  {
+    "model": "catalog.category",
+    "pk": 1,
+    "fields": {
+      "name": "Рассылки",
+      "description": null
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 2,
+    "fields": {
+      "name": "Телеграм боты",
+      "description": null
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 3,
+    "fields": {
+      "name": "Полезные утилиты",
+      "description": null
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 4,
+    "fields": {
+      "name": "Веб-приложения",
+      "description": null
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 5,
+    "fields": {
+      "name": "Микросервисы",
+      "description": null
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 1,
+    "fields": {
+      "name": "Mood-bot",
+      "description": "Бот настроения. Спрашивает вас о самочувствии и отвечает в тему: картинкой или текстом.",
+      "photo": "2.jpg",
+      "category": 2,
+      "price": 300,
+      "creating_date": "2023-09-27T11:27:17.940Z",
+      "modified_date": "2023-10-12T09:03:20.836Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 2,
+    "fields": {
+      "name": "Bounty Hunter",
+      "description": "Парсер вакансий. Сервис для сбора интересующих вакансий с hh.ru",
+      "photo": "5.jpg",
+      "category": 5,
+      "price": 300,
+      "creating_date": "2023-09-27T11:27:17.942Z",
+      "modified_date": "2023-10-12T09:07:43.571Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 3,
+    "fields": {
+      "name": "Fastsender",
+      "description": "Сервис рассылок. Помогает автоматизировать рассылки и удобно настроить сервис под свои нужды",
+      "photo": "4.jpg",
+      "category": 1,
+      "price": 300,
+      "creating_date": "2023-09-27T11:27:17.943Z",
+      "modified_date": "2023-09-27T11:27:17.943Z"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 4,
+    "fields": {
+      "name": "Simple Site",
+      "description": "Обычный сайт. Хорош тем, что может служить уверенным фундаментом для любого старт-апа.",
+      "photo": "3.jpg",
+      "category": 4,
+      "price": 300,
+      "creating_date": "2023-09-27T11:27:17.945Z",
+      "modified_date": "2023-09-27T11:27:17.945Z"
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 4,
+    "fields": {
+      "product": 1,
+      "num_ver": 1,
+      "name_ver": "Первая",
+      "is_version": true
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 5,
+    "fields": {
+      "product": 2,
+      "num_ver": 1,
+      "name_ver": "Первая",
+      "is_version": true
+    }
+  },
+  {
+    "model": "catalog.blog",
+    "pk": 20,
+    "fields": {
+      "name": "Законы робототехники",
+      "slug": "zakonyi-robototehniki",
+      "text": "1. Робот не может причинить вред человеку или своим бездействием допустить, чтобы человеку был причинён вред.\r\n\r\n2. Робот должен повиноваться всем приказам, которые даёт человек, кроме тех случаев, когда эти приказы противоречат Первому Закону.\r\n\r\n3. Робот должен заботиться о своей безопасности в той мере, в которой это не противоречит Первому или Второму Законам.",
+      "preview": "media/2image_1_cUJsFIg_a8NEG6A.jpg",
+      "created_at": "2023-10-01T07:01:22.583Z",
+      "is_published": true,
+      "view_count": 11
+    }
+  },
+  {
+    "model": "catalog.blog",
+    "pk": 23,
+    "fields": {
+      "name": "Мечтают ли андроиды об электроовцах?",
+      "slug": "mechtayut-li-androidyi-ob-elektroovtsah",
+      "text": "Давно уже он в землю лег,\r\nА все мне чудится: гуляет\r\nОн в этих рощах – на лужок,\r\nПромокший от росы, ступает\r\nИ распустившийся цветок,\r\nС ужимкой важной обоняет\r\nИ слышит звонкий мой рожок…",
+      "preview": "media/pre_1460466294__do_androids_dream__by_ilnere-d98xx04.jpg",
+      "created_at": "2023-10-01T07:43:42.689Z",
+      "is_published": true,
+      "view_count": 7
+    }
+  }
+]
