@@ -18,6 +18,7 @@
             <a class="p-2 btn btn-outline-danger" href="{% url 'users_app:logout' %}">Выйти</a>
         {% else %}
             <a class="p-2 btn btn-outline-success" href="{% url 'users_app:login' %}">Войти</a>
+            <a class="p-2 btn btn-outline-warning" href="{% url 'users_app:register' %}">Регистрация</a>
         {% endif %}
     </nav>
 </div>
