@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/4.2/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -142,6 +142,6 @@ LOGIN_REDIRECT_URL = '/'
 
 EMAIL_HOST = 'smtp.yandex.ru'
 EMAIL_PORT = 465
-EMAIL_HOST_USER = 'noreply@oscarbot.ru'
-EMAIL_HOST_PASSWORD = 'AsTSNVv7pun9'
+EMAIL_HOST_USER = 'm@sster.ru'
+EMAIL_HOST_PASSWORD = os.getenv('YA_PASS')
 EMAIL_USE_SSL = True
