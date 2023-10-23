@@ -138,3 +138,4 @@ MEDIA_ROOT = BASE_DIR / 'media/'
 
 AUTH_USER_MODEL = 'users_app.User'
 LOGOUT_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/'
