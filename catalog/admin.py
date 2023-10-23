@@ -1,6 +1,12 @@
 from django.contrib import admin
 
 from catalog.models import Category, Product, Blog, Version
+from users_app.models import User
+
+
+@admin.register(User)
+class UserAdmin(admin.ModelAdmin):
+    list_display = ('email', 'password')
 
 
 @admin.register(Category)
