@@ -1,6 +1,12 @@
 from django.contrib import admin
 
 from catalog.models import Category, Product, Blog, Version
+from users_app.models import User
+
+
+@admin.register(User)
+class UserAdmin(admin.ModelAdmin):
+    list_display = ('email', 'password')
 
 
 @admin.register(Category)
@@ -11,7 +17,7 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name', 'price', 'category', 'creating_date', 'modified_date')
+    list_display = ('id', 'name', 'price', 'category', 'creating_date', 'modified_date', 'user')
     list_filter = ('category',)
     list_search = ('name', 'description')
 
