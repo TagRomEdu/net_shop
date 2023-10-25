@@ -73,6 +73,7 @@ class BlogCreateView(CreateView):
         if form.is_valid():
             new_blog = form.save()
             new_blog.slug = slugify(new_blog.name)
+            new_blog.user = self.request.user
             new_blog.save()
         return super().form_valid(form)
 
