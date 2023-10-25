@@ -24,7 +24,7 @@ class ProductAdmin(admin.ModelAdmin):
 
 @admin.register(Blog)
 class BlogAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name', 'slug', 'created_at', 'is_published', 'view_count')
+    list_display = ('id', 'name', 'slug', 'created_at', 'is_published', 'view_count', 'user')
     list_search = ('name', 'text')
 
 
