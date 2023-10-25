@@ -1,3 +1,5 @@
+from django.contrib.auth.models import Permission
+from django.contrib.contenttypes.models import ContentType
 from django.db import models
 
 from users_app.models import User
@@ -66,3 +68,7 @@ class Blog(models.Model):
     class Meta:
         verbose_name = "Статья"
         verbose_name_plural = "Статьи"
+
+        permissions = [
+            ('set_published', 'Can publish blogs')
+        ]
