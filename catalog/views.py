@@ -25,6 +25,11 @@ class ProductCreateView(CreateView):
 class ProductListView(ListView):
     model = Product
 
+    def get_queryset(self, *args, **kwargs):
+        queryset = super().get_queryset(*args, **kwargs)
+        queryset = queryset.filter(is_published=True)
+        return queryset
+
 
 class ProductDetailView(DetailView):
     model = Product
@@ -37,7 +42,7 @@ class ProductUpdateView(UpdateView):
 
     def get_object(self, queryset=None):
         self.object = super().get_object(queryset)
-        if self.object.user != self.request.user:
+        if self.object.user != self.request.user and not self.request.user.is_staff:
             raise Http404
         return self.object
 
