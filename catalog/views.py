@@ -5,7 +5,7 @@ from django.urls import reverse_lazy, reverse
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from pytils.translit import slugify
 
-from catalog.forms import BlogForm, ProductForm, VersionForm
+from catalog.forms import BlogForm, ProductForm, VersionForm, StaffProductForm
 from catalog.models import Product, Blog, Version
 
 
@@ -42,18 +42,22 @@ class ProductUpdateView(UpdateView):
 
     def get_object(self, queryset=None):
         self.object = super().get_object(queryset)
+        print(self.object.__dict__)
         if self.object.user != self.request.user and not self.request.user.is_staff:
             raise Http404
         return self.object
 
     def get_context_data(self, **kwargs):
         context_data = super().get_context_data(**kwargs)
-        VersionFormset = inlineformset_factory(Product, Version, form=VersionForm, extra=1)
-        if self.request.method == 'POST':
-            formset = VersionFormset(self.request.POST, instance=self.object)
+        if self.request.user.is_staff:
+            context_data['form'] = StaffProductForm
         else:
-            formset = VersionFormset(instance=self.object)
-        context_data['formset'] = formset
+            VersionFormset = inlineformset_factory(Product, Version, form=VersionForm, extra=1)
+            if self.request.method == 'POST':
+                formset = VersionFormset(self.request.POST, instance=self.object)
+            else:
+                formset = VersionFormset(instance=self.object)
+            context_data['formset'] = formset
         return context_data
 
     def form_valid(self, form):
