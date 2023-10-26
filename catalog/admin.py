@@ -17,14 +17,14 @@ class CategoryAdmin(admin.ModelAdmin):
 
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name', 'price', 'category', 'creating_date', 'modified_date', 'user')
+    list_display = ('id', 'name', 'price', 'category', 'creating_date', 'modified_date', 'user', 'is_published')
     list_filter = ('category',)
     list_search = ('name', 'description')
 
 
 @admin.register(Blog)
 class BlogAdmin(admin.ModelAdmin):
-    list_display = ('id', 'name', 'slug', 'created_at', 'is_published', 'view_count')
+    list_display = ('id', 'name', 'slug', 'created_at', 'is_published', 'view_count', 'user')
     list_search = ('name', 'text')
 
 

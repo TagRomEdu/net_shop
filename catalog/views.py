@@ -1,10 +1,12 @@
+from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.forms import inlineformset_factory
+from django.http import Http404
 from django.shortcuts import render
 from django.urls import reverse_lazy, reverse
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from pytils.translit import slugify
 
-from catalog.forms import BlogForm, ProductForm, VersionForm
+from catalog.forms import BlogForm, ProductForm, VersionForm, StaffProductForm
 from catalog.models import Product, Blog, Version
 
 
@@ -24,6 +26,11 @@ class ProductCreateView(CreateView):
 class ProductListView(ListView):
     model = Product
 
+    def get_queryset(self, *args, **kwargs):
+        queryset = super().get_queryset(*args, **kwargs)
+        queryset = queryset.filter(is_published=True)
+        return queryset
+
 
 class ProductDetailView(DetailView):
     model = Product
@@ -31,8 +38,18 @@ class ProductDetailView(DetailView):
 
 class ProductUpdateView(UpdateView):
     model = Product
-    form_class = ProductForm
     success_url = reverse_lazy('catalog:main')
+
+    def get_form_class(self):
+        if self.request.user.is_staff:
+            return StaffProductForm
+        return ProductForm
+
+    def get_object(self, queryset=None):
+        self.object = super().get_object(queryset)
+        if self.object.user != self.request.user and not self.request.user.is_staff:
+            raise Http404
+        return self.object
 
     def get_context_data(self, **kwargs):
         context_data = super().get_context_data(**kwargs)
@@ -73,6 +90,7 @@ class BlogCreateView(CreateView):
         if form.is_valid():
             new_blog = form.save()
             new_blog.slug = slugify(new_blog.name)
+            new_blog.user = self.request.user
             new_blog.save()
         return super().form_valid(form)
 
@@ -100,6 +118,12 @@ class BlogUpdateView(UpdateView):
     model = Blog
     form_class = BlogForm
     success_url = reverse_lazy('catalog:list')
+
+    def get_object(self, queryset=None):
+        self.object = super().get_object(queryset)
+        if self.object.user != self.request.user:
+            raise Http404
+        return self.object
 
     def form_valid(self, form):
         if form.is_valid():

@@ -17,7 +17,7 @@
         </div>
       </div>
         <div class="card-footer">
-          {% if user.is_authenticated and object.user == user %}
+          {% if user.is_staff or object.user == user %}
             <a type="button" class="btn btn-warning" href="{% url 'catalog:prod_update' object.pk %}"><h3>Править</h3></a>
           {% endif %}
           <button type="button" class="btn btn-success"><h3>Слышь, купи!</h3></button>
