@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import PermissionRequiredMixin
 from django.forms import inlineformset_factory
 from django.http import Http404
 from django.shortcuts import render
@@ -37,27 +38,27 @@ class ProductDetailView(DetailView):
 
 class ProductUpdateView(UpdateView):
     model = Product
-    form_class = ProductForm
     success_url = reverse_lazy('catalog:main')
+
+    def get_form_class(self):
+        if self.request.user.is_staff:
+            return StaffProductForm
+        return ProductForm
 
     def get_object(self, queryset=None):
         self.object = super().get_object(queryset)
-        print(self.object.__dict__)
         if self.object.user != self.request.user and not self.request.user.is_staff:
             raise Http404
         return self.object
 
     def get_context_data(self, **kwargs):
         context_data = super().get_context_data(**kwargs)
-        if self.request.user.is_staff:
-            context_data['form'] = StaffProductForm
+        VersionFormset = inlineformset_factory(Product, Version, form=VersionForm, extra=1)
+        if self.request.method == 'POST':
+            formset = VersionFormset(self.request.POST, instance=self.object)
         else:
-            VersionFormset = inlineformset_factory(Product, Version, form=VersionForm, extra=1)
-            if self.request.method == 'POST':
-                formset = VersionFormset(self.request.POST, instance=self.object)
-            else:
-                formset = VersionFormset(instance=self.object)
-            context_data['formset'] = formset
+            formset = VersionFormset(instance=self.object)
+        context_data['formset'] = formset
         return context_data
 
     def form_valid(self, form):
